@@ -45,11 +45,7 @@ public class Pattern1 {
 		
 		Pattern ip1 = Pattern.compile("[a-f0-9]*::[a-f0-9]*:[a-f0-9]*:[a-f0-9]*:[a-f0-9]*:[a-f0-9]*");
 		System.out.println(ip1.matcher("fe04:::9f2::fe3:a9e").matches());
-		
-		Pattern mailId = Pattern.compile("(\\w{1,12}).(\\w+)@([a-z]+).([a-z]{3})");
-		Matcher mail = mailId.matcher("user.123@gmail.com");
-		System.out.println(mail.group(3));
-		
+				
 		Pattern str=Pattern.compile("mr[.]?");
 		System.out.println(str.matcher("mr").matches());
 		
@@ -58,6 +54,26 @@ public class Pattern1 {
 		System.out.println(mt3.matches());
 		System.out.println(mt3.group());
 		System.out.println(mt3.group(1));
+		
+		Pattern num=Pattern.compile("\\d{3}[.-]*\\d{3}[.-]*\\d+");
+		Matcher mt4 = num.matcher("021-7865.4321");
+		System.out.println(mt3.matches());
+		
+		Pattern id=Pattern.compile("http.*");
+		Matcher mt5 = id.matcher("https");
+		System.out.println(mt5.matches());
+		
+		Pattern num1=Pattern.compile("(\\d{4}-\\d{7}) / (\\d{3}-\\d{7})\\s/\\s(\\d{4}-\\d{7})\\s/\\s(\\d{3}-\\d{7})");
+		Matcher num2=num1.matcher("1234-6543214 / 987-5643217 / 1234-6543214 / 987-5643217");
+		System.out.println(num2.matches());
+		System.out.println(num2.group(2));
+		
+		Pattern mailId = Pattern.compile("(\\w+).(\\w+)@([a-z]+).([a-z]{3})");
+		Matcher mail = mailId.matcher("user.123@gmail.com");
+		System.out.println(mail.matches());
+		System.out.println(mail.group(3));
+		
+		
 		
 	}
 
