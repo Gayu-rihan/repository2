@@ -101,9 +101,9 @@ public class Database {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","system","tiger");
 			stmt=conn.createStatement();
-			String sql=("delete from customer where custName='%s'",custName);
-			int r=stmt.executeUpdate(sql); //customer==your table name
-			System.out.println(r+"   rows gets affected");
+			//String sql=("delete from customer where custName='%s'",custName);
+			//int r=stmt.executeUpdate(sql); //customer==your table name
+			//System.out.println(r+"   rows gets affected");
 			
 			//connection close();
 			conn.close(); 
